@@ -30,10 +30,8 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           <SignedOut>
-            <SignInButton />
           </SignedOut>
           <SignedIn>
-            <UserButton />
           </SignedIn>
           {children}
         </body>
