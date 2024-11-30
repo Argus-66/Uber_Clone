@@ -8,17 +8,9 @@ import {
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from '@/components/Header';
+import {Montserrat} from 'next/font/google';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Montserrat({subsets: ['latin']})
 
 export const metadata = {
   title: "Create Next App",
@@ -29,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body className={inter.className}>
           <SignedOut>
           </SignedOut>
           <SignedIn>
