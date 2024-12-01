@@ -7,6 +7,7 @@ import {
 } from '@clerk/nextjs'
 import localFont from "next/font/local";
 import "./globals.css";
+import '../OlaMapsWebSDK/dist/style.css';
 import Header from '@/components/Header';
 import {Montserrat} from 'next/font/google';
 
