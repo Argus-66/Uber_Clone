@@ -7,15 +7,13 @@ function InputItem({ type, onSelect, isClearable = false }) {
     const [inputValue, setInputValue] = useState('');
     const [results, setResults] = useState([]);
 
-    // Function to fetch autocomplete results from Ola Maps API
     const fetchSuggestions = async (query) => {
-        if (query.length > 2) { // Start searching after 3 characters
+        if (query.length > 2) {
             const response = await fetch(`https://api.olamaps.io/places/v1/autocomplete?input=${query}&api_key=LAGydV3iTAvNppYgiIXUHA1PV6kAfJFwb76reivs`);
-
             const data = await response.json();
             setResults(data.predictions || []);
         } else {
-            setResults([]); // Clear results when input is short
+            setResults([]);
         }
     };
 
@@ -28,14 +26,7 @@ function InputItem({ type, onSelect, isClearable = false }) {
     const handleSelect = (result) => {
         setInputValue(result.description);
         onSelect(result);
-        console.log(`Selected place: ${result.description}`);
-        console.log(`Type: ${type}`);
-        if (result.geometry && result.geometry.location) {
-            console.log(`Latitude: ${result.geometry.location.lat}, Longitude: ${result.geometry.location.lng}`);
-        } else {
-            console.error("No geometry information available.");
-        }
-        setResults([]); // Clear results after selection
+        setResults([]);
     };
 
     const clearInput = () => {

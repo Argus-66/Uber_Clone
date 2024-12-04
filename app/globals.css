@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 500px; /* Adjust map height */
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
